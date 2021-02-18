@@ -1,0 +1,13 @@
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.csprojAssemblyReference.cache
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.AssemblyInfoInputs.cache
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.AssemblyInfo.cs
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.csproj.CoreCompileInputs.cache
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.exe
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.deps.json
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.runtimeconfig.json
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.runtimeconfig.dev.json
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.dll
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\bin\Debug\netcoreapp3.1\MultiCipherForDocs.pdb
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.dll
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.pdb
+C:\Users\Student\source\repos\MultiCipherForDocs\MultiCipherForDocs\obj\Debug\netcoreapp3.1\MultiCipherForDocs.genruntimeconfig.cache
