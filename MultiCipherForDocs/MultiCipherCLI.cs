@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MultiCipherForDocs.Ciphers;
+using System.IO;
 
 namespace MultiCipherForDocs
 {
@@ -18,6 +19,7 @@ namespace MultiCipherForDocs
         private readonly RailroadCipher railroad = new RailroadCipher();
         private readonly VigenereCipher vigenere = new VigenereCipher();
         private readonly MultiLayerCipher multilayer = new MultiLayerCipher();
+        private readonly DocumentIO documentIO = new DocumentIO();
 
         public MultiCipherCLI()
         {
@@ -54,7 +56,7 @@ namespace MultiCipherForDocs
                         break;
 
                     case Command_Document_Cipher:
-                        //RunDocument();
+                        RunDocument();
                         break;
 
                     case Command_Quit:
@@ -155,6 +157,43 @@ namespace MultiCipherForDocs
                 output = railroad.Encipher(output);
                 output = multilayer.Encipher(output, altKey);
                 Console.WriteLine(output);
+            }
+            RetToCon();
+        }
+        private void RunDocument()
+        {
+            PrintHeader();
+
+            string selection = EncryptOrDecrypt();
+            string fullPath = GetFilePath();
+            string key = GetKey();
+            string altKey = TableFunctions.AltKeyGen(key);
+
+            if (selection == "2")
+            {
+                PrintHeader();
+                bool decipherSuccessful = documentIO.Decipher(fullPath, key);
+                if (decipherSuccessful)
+                {
+                    Console.WriteLine("File decipher successful!");
+                }
+                else
+                {
+                    Console.WriteLine("File decipher was not successful, please try again!");
+                }
+            }
+            else
+            {
+                PrintHeader();
+                bool encipherSuccessful = documentIO.Encipher(fullPath, key);
+                if (encipherSuccessful)
+                {
+                    Console.WriteLine("File encipher successful!");
+                }
+                else
+                {
+                    Console.WriteLine("File encipher was not successful, please try again!");
+                }
             }
             RetToCon();
         }
@@ -288,6 +327,26 @@ namespace MultiCipherForDocs
                 }
             }
             return shiftKey;
+        }
+        public static string GetFilePath()
+        {
+            string fullPath = "";
+            while (true)
+            {
+                PrintHeader();
+                Console.WriteLine("Please input a fully qualified file path:\n");
+                fullPath = Console.ReadLine();
+                Console.Clear();
+                if (!Path.IsPathFullyQualified(fullPath))
+                {
+                    Invalid();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return fullPath;
         }
         public static void InvalidChar()
         {
