@@ -13,7 +13,7 @@ namespace MultiCipherForDocs.Ciphers
         }
         public static string MakeExtCharLine()
         {
-            string alphaOrigin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz-+,.!? ";
+            string alphaOrigin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz-_+=,./<>?;:'\"[]{}|\\!@#$%^&*() ";
             return alphaOrigin;
         }
         public static Dictionary<char, string> MakeTable(string alphaOrigin)

@@ -13,6 +13,7 @@ namespace MultiCipherForDocs
         const string Command_Railroad_Cipher = "3";
         const string Command_MultiLayer_Cipher = "4";
         const string Command_Document_Cipher = "5";
+        const string Command_Instructions = "i";
         const string Command_Quit = "q";
 
         private readonly CaesarianCipher caesarian = new CaesarianCipher();
@@ -59,8 +60,12 @@ namespace MultiCipherForDocs
                         RunDocument();
                         break;
 
+                    case Command_Instructions:
+                        RunInstructions();
+                        break;
+
                     case Command_Quit:
-                        Console.WriteLine("Thank you for using MultiCipher\n");
+                        ThankYou();
                         RetToCon();
                         return;
                 }
@@ -77,13 +82,13 @@ namespace MultiCipherForDocs
             if (selection == "2")
             {
                 PrintHeader();
-                //output = caesarian.Decipher(message, key);
+                output = caesarian.Decipher(message, key);
                 Console.WriteLine(output);
             }
             else
             {
                 PrintHeader();
-                //output = caesarian.Encipher(message, key);
+                output = caesarian.Encipher(message, key);
                 Console.WriteLine(output);
             }
             RetToCon();
@@ -197,6 +202,11 @@ namespace MultiCipherForDocs
             }
             RetToCon();
         }
+        private void RunInstructions()
+        {
+            PrintHeader();
+            PrintInstructions();
+        }
         public static void PrintHeader()
         {
             Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
@@ -214,10 +224,10 @@ namespace MultiCipherForDocs
             Console.WriteLine("of your choosing.\n");
             Console.WriteLine("All uppercase and lowercase English");
             Console.WriteLine("characters are supported in multilayer");
-            Console.WriteLine("mode, along with the following special");
-            Console.WriteLine("characters: -+,.!? ");
-            Console.WriteLine("\nVigenere Cipher is restricted to all");
-            Console.WriteLine("uppercase letters.\n");
+            Console.WriteLine("mode.");
+            Console.WriteLine("\nVigenere and Caesarian Ciphers are");
+            Console.WriteLine("restricted to all uppercase letters and");
+            Console.WriteLine("will remove any spaces.\n");
             RetToCon();
         }
         public static void PrintMenu()
@@ -228,6 +238,8 @@ namespace MultiCipherForDocs
             Console.WriteLine("(2) Vigenere Cipher");
             Console.WriteLine("(3) Railroad Cipher");
             Console.WriteLine("(4) Multilayer Cipher");
+            Console.WriteLine("(5) Document Encrypter");
+            Console.WriteLine("(i) Instructions");
             Console.WriteLine("(q) Exit program");
         }
         public static string EncryptOrDecrypt()
@@ -313,17 +325,17 @@ namespace MultiCipherForDocs
             while (true)
             {
                 PrintHeader();
-                Console.WriteLine("Please input a number (2-26) for a Caesarian shift:\n");
+                Console.WriteLine("Please input a number (1-25) for a Caesarian shift:\n");
                 string message = Console.ReadLine();
                 shiftKey = int.Parse(message);
                 Console.Clear();
-                if (shiftKey < 2 || shiftKey > 26)
+                if (shiftKey > 1 || shiftKey < 25)
                 {
-                    Invalid();
+                    break;
                 }
                 else
                 {
-                    break;
+                    Invalid();
                 }
             }
             return shiftKey;
@@ -354,6 +366,19 @@ namespace MultiCipherForDocs
             PrintHeader();
             Console.WriteLine("User input contained an invalid character\n");
             RetToCon();
+        }
+        public static void ThankYou()
+        {
+            Console.WriteLine("Thank");
+            Console.WriteLine("Thank you");
+            Console.WriteLine("Thank you for");
+            Console.WriteLine("Thank you for using");
+            Console.WriteLine("Thank you for using MultiCipher");
+            Console.WriteLine("Thank you for using");
+            Console.WriteLine("Thank you for");
+            Console.WriteLine("Thank you");
+            Console.WriteLine("Thank");
+
         }
     }
 }
